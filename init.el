@@ -74,7 +74,7 @@
 ;                   (append
 ;					(if autopair-handle-action-fns
 ;						autopair-handle-action-fns
-;					  '(autopair-default-handle-action))
+;                     '(autopair-default-handle-action))
 ;					'((lambda (action pair pos-before)
 ;						(hl-paren-color-update)))))))
 ;; Internal mode of show pren.
@@ -82,13 +82,16 @@
 ;; Line numbers
 (global-linum-mode t)
 
+;; White space clean up before each save
+(add-hook 'before-save-hook #'whitespace-cleanup)
+
 ;;
 ;; Appearance
 ;;
 
 ;; Removing menus.
 (menu-bar-mode 0)
-(toggle-frame-fullscreen) 
+(toggle-frame-fullscreen)
 (tool-bar-mode -1)
 
 ;;;
@@ -148,7 +151,7 @@
   (exec-path-from-shell-copy-env "GOPATH")
 )
 
-;;; 
+;;;
 ;;; Other Packages
 ;;;
 (use-package org
