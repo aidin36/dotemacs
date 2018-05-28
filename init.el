@@ -164,3 +164,4 @@
 (load "~/.emacs.d/init-files/scala.el")
 (load "~/.emacs.d/init-files/git.el")
 (load "~/.emacs.d/init-files/go.el")
+(load "~/.emacs.d/init-files/yaml.el")
