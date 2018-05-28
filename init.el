@@ -142,6 +142,9 @@
 
 (when window-system
   (exec-path-from-shell-initialize)
+  ; Disabling warning message.
+  (setq exec-path-from-shell-check-startup-files nil)
+  ; Loading GOPATH too.
   (exec-path-from-shell-copy-env "GOPATH")
 )
 
