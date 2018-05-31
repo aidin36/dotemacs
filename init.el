@@ -124,6 +124,7 @@
 
 ;;;
 ;;; Multi cursor
+;;; I assigned "M-j" to the Multi cursor.
 ;;;
 (use-package cl-lib
   :ensure t
@@ -143,6 +144,7 @@
   :ensure t
 )
 
+;; Loading PATH environment variable from the user's default shell.
 (when window-system
   (exec-path-from-shell-initialize)
   ; Disabling warning message.

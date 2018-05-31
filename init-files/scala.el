@@ -2,16 +2,6 @@
 ;; ENSIME configurations
 ;;
 
-;; ensime package (Scala)
-(use-package ensime
-  :ensure t
-  :pin melpa-stable)
-
-;; Disabling ensime startup message
-(setq
- ensime-startup-notification nil
-)
-
 ;;;
 ;;; Scalafmt
 ;;;
@@ -30,7 +20,17 @@
   "Turn on all Scala customizations"
   (interactive)
 
-  ;; Summary of current file
+  ;; ensime package (Scala)
+  (use-package ensime
+    :ensure t
+    :pin melpa-stable)
+
+  ;; Disabling ensime startup message
+  (setq
+   ensime-startup-notification nil
+   )
+
+  ;; Summary of current file (M-i)
   (use-package popup-imenu
     :ensure t
     :commands popup-imenu
@@ -39,7 +39,7 @@
   (require 'column-marker)
   (lambda () (interactive) (column-marker-1 120))
 
-  (global-set-key (kbd "<f12>") 'run-cli-scalafmt)
+  ;; Formatting before saving the file.
   (add-hook 'before-save-hook 'run-cli-scalafmt)
 
   (message "Ready to Scala!")
