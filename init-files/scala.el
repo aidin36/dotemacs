@@ -15,13 +15,12 @@
 ;;;
 ;;; Scalafmt
 ;;;
-(defun run-cli-scalafmt (pos)
+(defun run-cli-scalafmt ()
   "Format current file using `scalafmt' command line interface, preserving position `POS'."
-  (interactive "d")
-  (save-buffer)
+  (interactive)
+
   (call-process "ng-nailgun" nil nil nil "scalafmt" "-c" "/home/aidin/workspace/core/.scalafmt.conf" "--non-interactive" buffer-file-name)
   (revert-buffer :ignore-auto :noconfirm)
-  (goto-char pos)
 )
 
 ;;;
@@ -36,7 +35,7 @@
     :ensure t
     :commands popup-imenu
     :bind ("M-i" . popup-imenu))
-  
+
   (require 'column-marker)
   (lambda () (interactive) (column-marker-1 120))
 
