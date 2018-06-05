@@ -40,7 +40,7 @@
   (lambda () (interactive) (column-marker-1 120))
 
   ;; Formatting before saving the file.
-  (add-hook 'before-save-hook 'run-cli-scalafmt)
+  (add-hook 'after-save-hook 'run-cli-scalafmt)
 
   (message "Ready to Scala!")
 )
