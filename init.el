@@ -91,7 +91,7 @@
 
 ;; Removing menus.
 (menu-bar-mode 0)
-(toggle-frame-fullscreen)
+;(toggle-frame-fullscreen)
 (tool-bar-mode -1)
 
 ;;;
