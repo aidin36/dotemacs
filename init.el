@@ -107,10 +107,11 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 ;; Helm switch buffer
 (global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "M-l") 'helm-mini)
 ;; Helm search files
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
-; Moving between buffer
+; Moving between buffers
 (global-set-key (kbd "C-;") 'previous-buffer)
 (global-set-key (kbd "C-'") 'next-buffer)
 
