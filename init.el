@@ -115,6 +115,9 @@
 (global-set-key (kbd "C-;") 'previous-buffer)
 (global-set-key (kbd "C-'") 'next-buffer)
 
+; List kill ring
+(global-set-key (kbd "C-x C-y") 'helm-show-kill-ring)
+
 ;;
 ;; Other configs
 ;;
