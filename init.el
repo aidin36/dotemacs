@@ -9,7 +9,9 @@
  make-backup-files nil
  column-number-mode t
  show-paren-delay 0
- sentence-end-double-space nil)
+ sentence-end-double-space nil
+ ;; Case insensitive search.
+ case-fold-search t)
 
 ;; buffer local variables
 (setq-default
