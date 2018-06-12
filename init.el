@@ -92,6 +92,13 @@
 ;; White space clean up before each save
 (add-hook 'before-save-hook #'whitespace-cleanup)
 
+;; Autocompletion
+(use-package auto-complete
+  :ensure t
+)
+; Turning it on at all times.
+(global-auto-complete-mode)
+
 ;;
 ;; Appearance
 ;;
