@@ -3,6 +3,9 @@
 ;; Load path
 (add-to-list 'load-path "~/.emacs.d/libraries")
 
+;; Maximize the window
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 ;; global variables
 (setq
  create-lockfiles nil
