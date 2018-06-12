@@ -11,7 +11,9 @@
  show-paren-delay 0
  sentence-end-double-space nil
  ;; Case insensitive search.
- case-fold-search t)
+ case-fold-search t
+ ;; Don't show startup page.
+ inhibit-startup-screen t)
 
 ;; buffer local variables
 (setq-default
