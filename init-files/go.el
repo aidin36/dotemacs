@@ -27,5 +27,10 @@
   ;; Setting jump-to-definition shortkey
   (global-set-key (kbd "M-.") 'godef-jump)
 
+  ;; Autocomplete. I use `gocode'.
+  (require 'go-autocomplete)
+  (require 'auto-complete-config)
+  (ac-config-default)
+
   (message "Ready to Go!")
 )
