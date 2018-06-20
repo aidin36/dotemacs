@@ -17,18 +17,19 @@ Requirements
 The `init.el` file handles all Emacs package dependencies by itself. However, there are some external tools required for some functionality.
 
 General:
-* xclip
+* `xclip` for sharing Emacs' kill ring with OS clipboard.
 
 Scala:
-* scalafmt
+* `scalafmt` for formatting scala files.
 
 Go:
-* gofmt
-* gocode (go get -u github.com/nsf/gocode)
+* gofmt for formatting go files.
+* gocode (go get -u github.com/nsf/gocode) for auto completion.
+* godef (go get -u github.com/rogpeppe/godef) for jumping around go code.
 
 Python:
-* jedi (pip install jedi)
-* autopep8 (pip install autopep8)
+* jedi (pip install jedi) for autocompletion.
+* autopep8 (pip install autopep8) for formatting Pythong files.
 
 Copyright
 ---------
