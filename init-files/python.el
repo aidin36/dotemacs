@@ -28,4 +28,7 @@
 
   ;; Enabling auto format on save.
   (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+
+  ;; Enabling fly-check which uses Pylint
+  (global-flycheck-mode)
 )
