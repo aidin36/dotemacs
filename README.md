@@ -31,6 +31,9 @@ Python:
 * jedi (pip install jedi) for autocompletion.
 * autopep8 (pip install autopep8) for formatting Pythong files.
 
+Other:
+* z (https://github.com/rupa/z/) for jumping to directories quickly.
+
 Copyright
 ---------
 Copyright 2018 Aidin Gharibnavaz (https://aidinhut.com)
