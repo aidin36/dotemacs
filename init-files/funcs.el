@@ -15,3 +15,41 @@
     (when new-kill-string
       (message "%s copied" new-kill-string)
       (kill-new new-kill-string))))
+
+;; `f' is one of my own shell functions. If you're someone other than me, you can ignore this (:
+(defun fcd (path-name)
+  "CD to a directory using 'f' command"
+  (interactive "sPath short name ")
+
+  ;; Loading the current shell along with its `rc' files.
+  (let ((shell-command-switch "-ic"))
+    ;; Invoking f command. `substring' used to remove trailing EOF.
+    (setq actual-path
+          (substring
+           (shell-command-to-string
+            (format "f p %s" path-name))
+           0 -1))
+
+    (cd actual-path)
+    (message (format "current dir: %s" actual-path))
+  )
+)
+
+(defun zcd (path-name)
+  "CD to a directory using 'z' command"
+  (interactive "sPath short name ")
+
+  ;; Loading the current shell along with its `rc' files.
+  (let ((shell-command-switch "-ic"))
+
+    ;; Invoking `z' command. `substring' used to remove trailing EOF.
+    (setq actual-path
+          (substring
+           (shell-command-to-string
+            (format "z -e %s" path-name))
+           0 -1))
+
+    (cd actual-path)
+    (message (format "current dir: %s" actual-path))
+  )
+)
