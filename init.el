@@ -172,6 +172,17 @@
 )
 
 ;;;
+;;; Finding files more easily inside a project.
+;;;
+(use-package find-file-in-project
+  :ensure t
+)
+; Use `fd' instead of `find'.
+(setq ffip-use-rust-fd t)
+
+(global-set-key (kbd "C-x M-l") 'find-file-in-project)
+
+;;;
 ;;; Other Packages
 ;;;
 (use-package org
