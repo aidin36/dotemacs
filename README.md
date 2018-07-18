@@ -31,6 +31,11 @@ Python:
 * jedi (pip install jedi) for autocompletion.
 * autopep8 (pip install autopep8) for formatting Pythong files.
 
+Rust:
+* rustfmt (cargo install rustfmt) for code formatting.
+* Rust source code (rustup component add rust-src) for code completion.
+* racer (cargo install racer) for autocompletion.
+
 Other:
 * z (https://github.com/rupa/z/) for jumping to directories quickly.
 
