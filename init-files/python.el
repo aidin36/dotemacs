@@ -26,6 +26,10 @@
   (setq jedi:complete-on-dot t)
   (jedi:install-server)
 
+  ;; Setting jump-to-definition shortkey
+  (global-set-key (kbd "M-.") 'jedi:goto-definition)
+  (global-set-key (kbd "M-,") 'jedi:goto-definition-pop-marker)
+
   ;; Enabling auto format on save.
   (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 
