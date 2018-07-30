@@ -97,7 +97,7 @@
   :ensure t
 )
 ; Turning it on at all times.
-(global-auto-complete-mode)
+;(global-auto-complete-mode)
 
 ;;
 ;; Appearance
