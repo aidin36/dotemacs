@@ -66,6 +66,9 @@
 )
 (load-theme 'solarized-light t)
 
+; Fonts
+(set-default-font "Iosevka Term Slab 11" nil t)
+
 ;;
 ;; Editing
 ;;
