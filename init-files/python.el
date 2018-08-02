@@ -33,6 +33,9 @@
   ;; Enabling auto format on save.
   (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 
+  ;; Setting python binary for flycheck.
+  (declare-function python-shell-calculate-exec-path "python3.7")
+
   ;; Enabling fly-check which uses Pylint
   (global-flycheck-mode)
 )
