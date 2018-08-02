@@ -18,7 +18,7 @@ The `init.el` file handles all Emacs package dependencies by itself. However, th
 
 General:
 * `xclip` for sharing Emacs' kill ring with OS clipboard.
-* `Iosevka Term Slab` font.
+* `Adobe Source Code Pro` font.
 
 Scala:
 * `scalafmt` for formatting scala files.
