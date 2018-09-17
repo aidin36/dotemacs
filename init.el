@@ -126,6 +126,8 @@
 (global-set-key (kbd "M-l") 'helm-mini)
 ;; Helm search files
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; Helm imenu
+(global-set-key (kbd "M-i") 'helm-imenu)
 
 ; Moving between buffers
 (global-set-key (kbd "C-;") 'previous-buffer)
