@@ -188,6 +188,10 @@
 
 (global-set-key (kbd "C-x M-l") 'find-file-in-project)
 
+;;; Magit
+; Use full buffer instead of half-windowed buffer.
+(setq magit-status-buffer-switch-function 'switch-to-buffer)
+
 ;;;
 ;;; Other Packages
 ;;;
