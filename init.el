@@ -53,7 +53,7 @@
     ("a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages
    (quote
-    (terraform-mode find-file-in-project flycheck-rust racer rust-mode auto-complete php-mode dockerfile-mode py-autopep8 jedi go-eldoc elpy exec-path-from-shell solarized-theme multiple-cursors xclip flycheck go-mode magit highlight-parentheses popup-imenu helm ensime use-package))))
+    (neotree all-the-icons keyfreq terraform-mode find-file-in-project flycheck-rust racer rust-mode auto-complete php-mode dockerfile-mode py-autopep8 jedi go-eldoc elpy exec-path-from-shell solarized-theme multiple-cursors xclip flycheck go-mode magit highlight-parentheses popup-imenu helm ensime use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -191,6 +191,19 @@
 ;;; Magit
 ; Use full buffer instead of half-windowed buffer.
 (setq magit-status-buffer-switch-function 'switch-to-buffer)
+
+;;; Neotree
+(use-package all-the-icons
+  :ensure t
+)
+
+(use-package neotree
+  :ensure t
+)
+
+; Use icons theme for Window and arrow (ascii) theme for Terminal.
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+(global-set-key [f8] 'neotree-toggle)
 
 ;;;
 ;;; Other Packages
