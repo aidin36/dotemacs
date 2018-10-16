@@ -136,6 +136,16 @@
 ; List kill ring
 (global-set-key (kbd "C-x C-y") 'helm-show-kill-ring)
 
+; Windows
+; Note: Use C-3 or C-M-3 for numberic input
+(global-set-key (kbd "M-3") 'split-window-right)
+(global-set-key (kbd "M-2") 'split-window-right)
+(global-set-key (kbd "M-1") 'delete-other-windows)
+(global-set-key (kbd "C-o") 'other-window)
+
+(global-set-key (kbd "M-s") 'save-buffer)
+(global-set-key (kbd "M-r") 'rgrep)
+
 ;;
 ;; Other configs
 ;;
