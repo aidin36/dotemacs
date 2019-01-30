@@ -225,6 +225,11 @@
   :ensure t
 )
 
+;;
+;; Disabled commands
+;;
+(put 'upcase-region 'disabled nil)
+
 ;;;
 ;;; Other config files.
 ;;;
