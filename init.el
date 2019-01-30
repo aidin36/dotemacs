@@ -146,6 +146,9 @@
 (global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-r") 'rgrep)
 
+; My funcs
+(global-set-key (kbd "M-z") 'zcd)
+
 ;;
 ;; Other configs
 ;;
