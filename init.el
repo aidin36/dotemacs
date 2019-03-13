@@ -53,7 +53,7 @@
     ("a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages
    (quote
-    (puppet-mode neotree all-the-icons terraform-mode find-file-in-project flycheck-rust racer rust-mode auto-complete php-mode dockerfile-mode py-autopep8 jedi go-eldoc elpy exec-path-from-shell solarized-theme multiple-cursors xclip flycheck go-mode magit highlight-parentheses popup-imenu helm ensime use-package))))
+    (helm-ag puppet-mode neotree all-the-icons terraform-mode find-file-in-project flycheck-rust racer rust-mode auto-complete php-mode dockerfile-mode py-autopep8 jedi go-eldoc elpy exec-path-from-shell solarized-theme multiple-cursors xclip flycheck go-mode magit highlight-parentheses popup-imenu helm ensime use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -144,7 +144,6 @@
 (global-set-key (kbd "C-o") 'other-window)
 
 (global-set-key (kbd "M-s") 'save-buffer)
-(global-set-key (kbd "M-r") 'rgrep)
 
 ; My funcs
 (global-set-key (kbd "M-z") 'zcd)
@@ -200,6 +199,15 @@
 (setq ffip-use-rust-fd t)
 
 (global-set-key (kbd "C-x M-l") 'find-file-in-project)
+
+;;;
+;;; ag (silver searcher) from project root.
+;;;
+(use-package helm-ag
+  :ensure t
+)
+
+(global-set-key (kbd "M-r") 'helm-do-ag-project-root)
 
 ;;; Magit
 ; Use full buffer instead of half-windowed buffer.
