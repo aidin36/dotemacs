@@ -42,4 +42,11 @@
 
   ;; Enabling fly-check which uses Pylint
   (global-flycheck-mode)
+
+  ;; I sometimes hit it accidentally.
+  (defun my-elpy-mode-hook-fun ()
+    (local-unset-key (kbd "C-<RET>")))
+
+  (add-hook 'elpy-mode-hook #'my-elpy-mode-hook-fun)
+
 )
