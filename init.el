@@ -53,7 +53,7 @@
     ("a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages
    (quote
-    (helm-ag puppet-mode neotree all-the-icons terraform-mode find-file-in-project flycheck-rust racer rust-mode auto-complete php-mode dockerfile-mode py-autopep8 jedi go-eldoc elpy exec-path-from-shell solarized-theme multiple-cursors xclip flycheck go-mode magit highlight-parentheses popup-imenu helm ensime use-package))))
+    (kubernetes fly-check helm-ag puppet-mode neotree all-the-icons terraform-mode find-file-in-project flycheck-rust racer rust-mode auto-complete dockerfile-mode py-autopep8 jedi go-eldoc elpy exec-path-from-shell solarized-theme multiple-cursors xclip flycheck go-mode magit highlight-parentheses popup-imenu helm ensime use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -112,45 +112,19 @@
 ;(toggle-frame-fullscreen)
 (tool-bar-mode -1)
 
-;;;
-;;; Short Keys
-;;;
-(use-package helm
-  :ensure t
-)
-
-;; Helm search commands
-(global-set-key (kbd "M-x") 'helm-M-x)
-;; Helm switch buffer
-(global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "M-l") 'helm-mini)
-;; Helm search files
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-;; Helm imenu
-(global-set-key (kbd "M-i") 'helm-imenu)
-
-; Moving between buffers
-(global-set-key (kbd "C-;") 'previous-buffer)
-(global-set-key (kbd "C-'") 'next-buffer)
-
-; List kill ring
-(global-set-key (kbd "C-x C-y") 'helm-show-kill-ring)
-
-; Windows
-; Note: Use C-3 or C-M-3 for numberic input
-(global-set-key (kbd "M-3") 'split-window-right)
-(global-set-key (kbd "M-2") 'split-window-below)
-(global-set-key (kbd "M-1") 'delete-other-windows)
-(global-set-key (kbd "C-o") 'other-window)
-
-(global-set-key (kbd "M-s") 'save-buffer)
-
-; My funcs
-(global-set-key (kbd "M-z") 'zcd)
-
 ;;
 ;; Other configs
 ;;
+
+; Install this one from Melpa instead of Melpa-stable
+(use-package flycheck
+ :ensure t
+ :pin melpa
+)
+
+(use-package helm
+  :ensure t
+)
 
 ;; Copy to system clipboard
 (use-package xclip
@@ -230,14 +204,22 @@
   :ensure t
 )
 
+;; Kubernetes
+(use-package kubernetes
+  :ensure t
+  :commands (kubernetes-overview))
+
+
 ;;
 ;; Disabled commands
 ;;
 (put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
 
 ;;;
 ;;; Other config files.
 ;;;
+(load "~/.emacs.d/init-files/keybindings.el")
 (load "~/.emacs.d/init-files/funcs.el")
 (load "~/.emacs.d/init-files/scala.el")
 (load "~/.emacs.d/init-files/git.el")
