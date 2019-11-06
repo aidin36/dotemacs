@@ -9,3 +9,11 @@
                            ("~/Documents/Tasks/someday.org" :level . 1)))
 
 (setq org-agenda-files '("~/Documents/Tasks"))
+
+(setq-default fill-column 100)
+
+;; Enabling virtual indent mode
+(add-hook 'org-mode-hook 'org-indent-mode)
+
+(setq org-todo-keywords
+      '((sequence "TODO" "|" "DONE" "MOVED" "WONTDO")))
