@@ -2,6 +2,9 @@
   "Turn on all Go customizations"
   (interactive)
 
+  ;; Turning on Go Modules all the time
+  (setenv "GO111MODULE" "on")
+
   ;; Required packages
   (use-package go-mode
     :ensure t
