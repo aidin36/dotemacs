@@ -18,6 +18,10 @@
     :ensure t
   )
 
+  (use-package golint
+    :ensure t
+  )
+
   ;; Enabling eldoc (showing signatures on mini-buffer)
   (add-hook 'go-mode-hook 'go-eldoc-setup)
 
