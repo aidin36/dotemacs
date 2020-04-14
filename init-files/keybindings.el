@@ -38,5 +38,9 @@
 
 (global-set-key (kbd "M-s") 'save-buffer)
 
+;; Zoom in/out
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+
 ; My funcs
 (global-set-key (kbd "M-z") 'zcd)
