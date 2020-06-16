@@ -40,9 +40,10 @@ Rust:
 
 Other:
 * z (https://github.com/rupa/z/) for jumping to directories quickly.
+* yamllint (pip install yamllint)
 
 Copyright
 ---------
-Copyright 2018 Aidin Gharibnavaz (https://aidinhut.com)
+Copyright 2018-2020 Aidin Gharibnavaz (https://aidinhut.com)
 All of these files are free software and published under the terms of GNU General Public License version 3 (or at your opinion, any later version).
 See [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) for more information.
