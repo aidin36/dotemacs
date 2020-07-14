@@ -8,6 +8,10 @@
 ;;(global-set-key (kbd "M-h") 'backward-char)
 ;;(global-set-key (kbd "M-H") 'backward-word)
 
+;; Helm keybinding for moving around according to my bindings
+;;(define-key helm-map (kbd "M-n") 'helm-next-line)
+;;(define-key helm-map (kbd "M-u") 'helm-previous-line)
+
 ;; Helm search commands
 (global-set-key (kbd "M-x") 'helm-M-x)
 ;; Helm switch buffer
@@ -17,10 +21,6 @@
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 ;; Helm imenu
 (global-set-key (kbd "M-i") 'helm-imenu)
-
-;; Helm keybinding for moving around according to my bindings
-;;(define-key helm-map (kbd "M-n") 'helm-next-line)
-;;(define-key helm-map (kbd "M-u") 'helm-previous-line)
 
 ; Moving between buffers
 (global-set-key (kbd "C-;") 'previous-buffer)

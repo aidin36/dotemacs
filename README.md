@@ -38,6 +38,10 @@ Rust:
 * Rust source code (rustup component add rust-src) for code completion.
 * racer (cargo install racer) for autocompletion.
 
+Javascript:
+* ESLint. It needs to be installed globally (npm install eslint --global) but there should be a local config file.
+* Prettier for formatting. It can be installed in the project's packages (npm install prettier)
+
 Other:
 * z (https://github.com/rupa/z/) for jumping to directories quickly.
 * yamllint (pip install yamllint)
