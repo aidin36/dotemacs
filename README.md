@@ -2,7 +2,7 @@ What is it?
 -----------
 This is my [Emacs](https://www.gnu.org/software/emacs/) configurations. This lives in `~/.emacs.d/` directory on my machines.
 
-I use Emacs for developing Scala, Go, and Python, among every other text file on my machine.
+I use Emacs as my main editor for everything. From development to task management to editing configs.
 
 How should I use it?
 --------------------
@@ -15,6 +15,9 @@ If you joined the Darkside, leave here immediately, or draw your lightsaber!
 Requirements
 ------------
 The `init.el` file handles all Emacs package dependencies by itself. However, there are some external tools required for some functionality.
+
+Note: You might have to install 'use-package' manually using `package-list-packages`.
+I didn't try to figure out why sometimes Emacs doesn't install it upon evaluating my `init.el` file.
 
 General:
 * `xclip` for sharing Emacs' kill ring with OS clipboard.
