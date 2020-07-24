@@ -29,25 +29,26 @@ Scala:
 
 Go:
 * gofmt for formatting go files.
-* gocode (go get -u github.com/nsf/gocode) for auto completion.
-* godef (go get -u github.com/rogpeppe/godef) for jumping around go code.
+* gocode (`go get -u github.com/nsf/gocode`) for auto completion.
+* godef (`go get -u github.com/rogpeppe/godef`) for jumping around go code.
 
 Python:
-* jedi (pip install jedi) for autocompletion.
-* autopep8 (pip install autopep8) for formatting Pythong files.
+* jedi (`pip install jedi`) for autocompletion.
+* autopep8 (`pip install autopep8`) for formatting Pythong files.
 
 Rust:
-* rustfmt (cargo install rustfmt) for code formatting.
-* Rust source code (rustup component add rust-src) for code completion.
-* racer (cargo install racer) for autocompletion.
+* rustfmt (`cargo install rustfmt`) for code formatting.
+* Rust source code (`rustup component add rust-src`) for code completion.
+* racer (`cargo install racer`) for autocompletion.
 
 Javascript:
-* ESLint. It needs to be installed globally (npm install eslint --global) but there should be a local config file.
-* Prettier for formatting. It can be installed in the project's packages (npm install prettier)
+* langserver (`npm i -g javascript-typescript-langserver`)
+* ESLint. It needs to be installed globally (`npm install eslint --global`) but there should be a local config file.
+* Prettier for formatting. It can be installed in the project's packages (`npm install prettier`)
 
 Other:
 * z (https://github.com/rupa/z/) for jumping to directories quickly.
-* yamllint (pip install yamllint)
+* yamllint (`pip install yamllint`)
 
 Copyright
 ---------

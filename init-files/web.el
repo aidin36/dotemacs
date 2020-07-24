@@ -2,7 +2,7 @@
 ;;; Call this to swtich on all web development configs
 ;;;
 (defun my-web ()
-  "Turn on all Python customizations"
+  "Turn on all Web customizations"
   (interactive)
 
   ;; Enabling fly-check which uses ESLint
@@ -13,4 +13,26 @@
   (use-package prettier
     :ensure t)
   (global-prettier-mode)
+
+  ;; Language Server
+  ;; The 'lsp-diagnostic-package' disables the Flycheck integration.
+  ;; I'm using ESLint because the LS Server doesn't get along well with 'flow'.
+  (use-package lsp-mode
+    :ensure t
+    :hook ((js-mode . lsp))
+    :commands lsp
+    :custom (lsp-diagnostic-package :none))
+
+  ;; Setting jump-to-definition shortkey
+  (global-set-key (kbd "M-.") 'lsp-find-definition)
+  ;;(global-set-key (kbd "M-,") ;; It's already binded
+  (global-set-key (kbd "M-?") 'lsp-find-references)
+
+  ;; F8 is the neotree (file browsing)
+  (global-set-key [f7] 'lsp-treemacs-symbols)
+
+  (use-package lsp-treemacs
+    :ensure t)
+
+
 )
