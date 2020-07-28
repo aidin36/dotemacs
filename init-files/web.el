@@ -23,16 +23,17 @@
     :commands lsp
     :custom (lsp-diagnostic-package :none))
 
+  (use-package lsp-treemacs
+    :ensure t)
+
+
   ;; Setting jump-to-definition shortkey
-  (global-set-key (kbd "M-.") 'lsp-find-definition)
+  ;; 'js-mode' assigns these keys, so we're replacing them.
+  (add-hook 'js-mode-hook (lambda () (local-set-key (kbd "M-.") 'lsp-find-definition)))
   ;;(global-set-key (kbd "M-,") ;; It's already binded
   (global-set-key (kbd "M-?") 'lsp-find-references)
 
   ;; F8 is the neotree (file browsing)
   (global-set-key [f7] 'lsp-treemacs-symbols)
-
-  (use-package lsp-treemacs
-    :ensure t)
-
 
 )
