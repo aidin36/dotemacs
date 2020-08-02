@@ -14,6 +14,10 @@
     :ensure t)
   (global-prettier-mode)
 
+  (use-package company
+    :ensure t)
+  (add-hook 'js-mode-hook 'company-mode)
+
   ;; Language Server
   ;; The 'lsp-diagnostic-package' disables the Flycheck integration.
   ;; I'm using ESLint because the LS Server doesn't get along well with 'flow'.
