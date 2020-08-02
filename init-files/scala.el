@@ -1,5 +1,5 @@
 ;;
-;; ENSIME configurations
+;; Scala configurations
 ;;
 
 ;;;
@@ -21,14 +21,14 @@
   (interactive)
 
   ;; ensime package (Scala)
-  (use-package ensime
-    :ensure t
-    :pin melpa-stable)
+  ;;(use-package ensime
+  ;;  :ensure t
+  ;;  :pin melpa-stable)
 
   ;; Disabling ensime startup message
-  (setq
-   ensime-startup-notification nil
-   )
+  ;;(setq
+  ;; ensime-startup-notification nil
+  ;; )
 
   ;; Summary of current file (M-i)
   (use-package popup-imenu
