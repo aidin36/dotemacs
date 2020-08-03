@@ -24,10 +24,13 @@
   ;; Loading the current shell along with its `rc' files.
   (let ((shell-command-switch "-ic"))
     ;; Invoking f command. `substring' used to remove trailing EOF.
+    ;; And all the mess for running the command is to discard 'stderr'. ZSH complains about ZLE, which I want to ignore.
     (setq actual-path
           (substring
-           (shell-command-to-string
-            (format "f p %s" path-name))
+           (with-output-to-string
+             (with-current-buffer
+               standard-output
+              (process-file shell-file-name nil '(t nil)  nil shell-command-switch (format "f p %s" path-name))))
            0 -1))
 
     (cd actual-path)
@@ -43,10 +46,13 @@
   (let ((shell-command-switch "-ic"))
 
     ;; Invoking `z' command. `substring' used to remove trailing EOF.
+    ;; And all the mess for running the command is to discard 'stderr'. ZSH complains about ZLE, which I want to ignore.
     (setq actual-path
           (substring
-           (shell-command-to-string
-            (format "z -e %s" path-name))
+           (with-output-to-string
+             (with-current-buffer
+               standard-output
+              (process-file shell-file-name nil '(t nil)  nil shell-command-switch (format "z -e %s" path-name))))
            0 -1))
 
     (cd actual-path)
