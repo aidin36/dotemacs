@@ -1,0 +1,6 @@
+.cache
+.lsp-session*
+auto-save-list/
+elpa/
+recentf
+session.*
