@@ -15,5 +15,8 @@
 ;; Enabling virtual indent mode
 (add-hook 'org-mode-hook 'org-indent-mode)
 
+;; It won't auto-reload if the buffer is modified. You won't lose un-saved work.
+(add-hook 'org-mode-hook 'auto-revert-mode)
+
 (setq org-todo-keywords
       '((sequence "TODO" "|" "DONE" "MOVED" "WONTDO")))
