@@ -109,8 +109,10 @@
 
 ;; Removing menus.
 (menu-bar-mode 0)
-;(toggle-frame-fullscreen)
+;; (toggle-frame-fullscreen)
 (tool-bar-mode -1)
+;; Always split side-by-side
+(setq split-height-threshold nil)
 
 ;;
 ;; Other configs
