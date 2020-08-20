@@ -20,27 +20,63 @@
   "Turn on all Scala customizations"
   (interactive)
 
-  ;; ensime package (Scala)
-  ;;(use-package ensime
-  ;;  :ensure t
-  ;;  :pin melpa-stable)
+  (use-package scala-mode
+    :ensure t
+    :mode "\\.s\\(cala\\|bt\\)$"
+  )
 
-  ;; Disabling ensime startup message
-  ;;(setq
-  ;; ensime-startup-notification nil
-  ;; )
+  (use-package flycheck
+    :ensure t
+  )
+
+  (global-flycheck-mode)
+
+  (use-package lsp-mode
+    :ensure t
+    :hook  (scala-mode . lsp)
+           (lsp-mode . lsp-lens-mode)
+    :config (setq lsp-prefer-flymake nil)
+            (setq lsp-enable-snippet nil)
+  )
+
+  (use-package lsp-metals
+    :ensure t
+  )
+
+  ;; lsp-mode supports snippets, but in order for them to work you need to use yasnippet
+  ;; If you don't want to use snippets set lsp-enable-snippet to nil in your lsp-mode settings
+  ;;   to avoid odd behavior with snippets and indentation
+  ;; NOTE: It set to nil above
+  ;(use-package yasnippet
+  ;  :ensure t
+  ;)
+
+  (use-package company-lsp
+    :ensure t
+  )
+
+  ;; It's not working for some reason
+  ;(use-package lsp-treemacs
+  ;  :ensure t
+  ;  :config
+  ;  (lsp-metals-treeview-enable t)
+  ;  (setq lsp-metals-treeview-show-when-views-received t)
+  ;)
 
   ;; Summary of current file (M-i)
-  (use-package popup-imenu
-    :ensure t
-    :commands popup-imenu
-    :bind ("M-i" . popup-imenu))
+  ;(use-package popup-imenu
+  ;  :ensure t
+  ;  :commands popup-imenu
+  ;  :bind ("M-i" . popup-imenu)
+  ;)
 
-  (require 'column-marker)
-  (lambda () (interactive) (column-marker-1 120))
+  ;(require 'column-marker)
+  ;(lambda () (interactive) (column-marker-1 120))
 
   ;; Formatting before saving the file.
   ;;(add-hook 'after-save-hook 'run-cli-scalafmt)
+
+  (global-set-key (kbd "M-/") 'lsp-find-references)
 
   (message "Ready to Scala!")
 )
