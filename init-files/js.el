@@ -1,7 +1,7 @@
 ;;;
-;;; Call this to swtich on all web development configs
+;;; Call this to swtich on all Javascript development configs
 ;;;
-(defun my-web ()
+(defun my-js ()
   "Turn on all Web customizations"
   (interactive)
 
