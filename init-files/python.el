@@ -7,6 +7,8 @@
 
   (use-package elpy
     :ensure t
+    :config
+      (remove-hook 'elpy-modules 'elpy-module-flymake)
   )
 
   ;; Auto-completion.
