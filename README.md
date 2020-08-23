@@ -23,9 +23,12 @@ General:
 * `xclip` for sharing Emacs' kill ring with OS clipboard.
 * `Adobe Source Code Pro` font.
 * fd (https://github.com/sharkdp/fd)
+* silver searcher (ag) https://github.com/ggreer/the_silver_searcher
+* z (https://github.com/rupa/z/) for jumping to directories quickly.
 
 Scala:
 * `scalafmt` for formatting scala files.
+* Metals (https://scalameta.org/metals/)
 
 Go:
 * gofmt for formatting go files.
@@ -47,7 +50,6 @@ Javascript:
 * Prettier for formatting. It can be installed in the project's packages (`npm install prettier`)
 
 Other:
-* z (https://github.com/rupa/z/) for jumping to directories quickly.
 * yamllint (`pip install yamllint`)
 
 Copyright
