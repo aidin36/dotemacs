@@ -128,6 +128,8 @@
   :ensure t
 )
 
+(global-set-key (kbd "C-c M-r") 'helm-resume)
+
 ;; Copy to system clipboard
 (use-package xclip
   :ensure t
