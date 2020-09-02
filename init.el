@@ -67,8 +67,7 @@
 (load-theme 'solarized-light t)
 
 ; Fonts
-;(set-default-font "Iosevka Term Slab 11" nil t)
-(set-default-font "Source Code Variable 10" nil t)
+(set-face-attribute 'default t :font "Source Code Variable 10")
 
 ;;
 ;; Editing
