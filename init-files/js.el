@@ -2,7 +2,7 @@
 ;;; Call this to swtich on all Javascript development configs
 ;;;
 (defun my-js ()
-  "Turn on all Web customizations"
+  "Turn on all Javascript customizations"
   (interactive)
 
   ;; Enabling fly-check which uses ESLint
@@ -50,4 +50,15 @@
   ;; F8 is the neotree (file browsing)
   (global-set-key [f7] 'lsp-treemacs-symbols)
 
+  ;; Copied from here: https://emacs.stackexchange.com/a/27609
+  (defun use-eslint-from-node-modules ()
+    (let ((root (locate-dominating-file
+                 (or (buffer-file-name) default-directory)
+                 (lambda (dir)
+                   (let ((eslint (expand-file-name "node_modules/.bin/eslint" dir)))
+                    (and eslint (file-executable-p eslint)))))))
+      (when root
+        (let ((eslint (expand-file-name "node_modules/.bin/eslint" root)))
+          (setq-local flycheck-javascript-eslint-executable eslint)))))
+  (add-hook 'flycheck-mode-hook #'use-eslint-from-node-modules)
 )

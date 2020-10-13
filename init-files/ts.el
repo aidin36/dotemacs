@@ -2,7 +2,7 @@
 ;;; Call this to swtich on all TypeScript development configs
 ;;;
 (defun my-ts ()
-  "Turn on all Web customizations"
+  "Turn on all Typescript customizations"
   (interactive)
 
   (global-flycheck-mode)
@@ -28,4 +28,16 @@
   (setq tide-format-options '(:placeOpenBraceOnNewLineForFunctions nil))
 
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+
+  ;; Copied from here: https://emacs.stackexchange.com/a/27609
+  (defun use-eslint-from-node-modules ()
+    (let ((root (locate-dominating-file
+                 (or (buffer-file-name) default-directory)
+                 (lambda (dir)
+                   (let ((eslint (expand-file-name "node_modules/.bin/eslint" dir)))
+                    (and eslint (file-executable-p eslint)))))))
+      (when root
+        (let ((eslint (expand-file-name "node_modules/.bin/eslint" root)))
+          (setq-local flycheck-javascript-eslint-executable eslint)))))
+  (add-hook 'flycheck-mode-hook #'use-eslint-from-node-modules)
 )
