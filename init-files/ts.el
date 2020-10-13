@@ -12,7 +12,7 @@
 
   (use-package tide
     :ensure t
-    :after (typescript-mode company flycheck)
+    :after (typescript-mode company)
     :hook ((typescript-mode . tide-setup)
            (typescript-mode . tide-hl-identifier-mode)))
 
@@ -40,4 +40,6 @@
         (let ((eslint (expand-file-name "node_modules/.bin/eslint" root)))
           (setq-local flycheck-javascript-eslint-executable eslint)))))
   (add-hook 'flycheck-mode-hook #'use-eslint-from-node-modules)
+
+  (setq-default flycheck-disabled-checkers '(typescript-tide))
 )
