@@ -37,6 +37,7 @@
            (lsp-mode . lsp-lens-mode)
     :config (setq lsp-prefer-flymake nil)
             (setq lsp-enable-snippet nil)
+            (setq lsp-enable-file-watchers nil)
   )
 
   (use-package lsp-metals
