@@ -65,7 +65,9 @@
 (load-theme 'solarized-light t)
 
 ; Fonts
-(set-face-attribute 'default t :font "Source Code Variable 10")
+(set-face-attribute 'default nil
+                    :family "Source Code Variable"
+                    :height 80)
 
 ;;
 ;; Editing
