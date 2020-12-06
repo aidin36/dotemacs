@@ -23,6 +23,7 @@
       '(
         eval-print-last-sexp
         helm-mini
+        help-for-help
         jedi:goto-definition
         previous-buffer
         ))
