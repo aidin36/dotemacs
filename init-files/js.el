@@ -61,4 +61,6 @@
         (let ((eslint (expand-file-name "node_modules/.bin/eslint" root)))
           (setq-local flycheck-javascript-eslint-executable eslint)))))
   (add-hook 'flycheck-mode-hook #'use-eslint-from-node-modules)
+
+  (message "Ready to JS!")
 )
