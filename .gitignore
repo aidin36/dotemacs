@@ -2,6 +2,7 @@
 .lsp-session*
 auto-save-list/
 elpa/
+elpy/
 recentf
 session.*
 .python-environments
