@@ -128,6 +128,7 @@
 )
 
 (global-set-key (kbd "C-c M-r") 'helm-resume)
+(global-set-key (kbd "C-c n") 'helm-resume)
 
 ;; Copy to system clipboard
 (use-package xclip
