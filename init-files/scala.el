@@ -34,10 +34,10 @@
   (use-package lsp-mode
     :ensure t
     :hook  (scala-mode . lsp)
-           (lsp-mode . lsp-lens-mode)
     :config (setq lsp-prefer-flymake nil)
             (setq lsp-enable-snippet nil)
             (setq lsp-enable-file-watchers nil)
+            (setq lsp-lens-enable nil)
   )
 
   (use-package lsp-metals
