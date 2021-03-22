@@ -1,6 +1,6 @@
 (defun copy-buffer-file-name (choice)
   "Copy the buffer-file-name to the kill-ring"
-  (interactive "cCopy Buffer Name (F) Full, (D) Directory, (N) Name")
+  (interactive "cCopy Buffer Name (f) Full, (d) Directory, (n) Name")
   (let ((new-kill-string)
         (name (if (eq major-mode 'dired-mode)
                   (dired-get-filename)
@@ -58,4 +58,27 @@
     (cd actual-path)
     (message (format "current dir: %s" actual-path))
   )
+)
+
+;; Copied from here: https://emacs.stackexchange.com/questions/3499/how-to-wrap-given-text-around-region
+(defun wrap-word-or-region (text-begin text-end)
+  "Surround current word or region with given text."
+  (interactive "sStart tag: \nsEnd tag: ")
+  (let (pos1 pos2 bds)
+    (if (and transient-mark-mode mark-active)
+        (progn
+          (goto-char (region-end))
+          (insert text-end)
+          (goto-char (region-beginning))
+          (insert text-begin))
+      (progn
+        (setq bds (bounds-of-thing-at-point 'symbol))
+        (goto-char (cdr bds))
+        (insert text-end)
+        (goto-char (car bds))
+        (insert text-begin)))))
+
+(defun wrap-in-some ()
+  (interactive)
+  (wrap-word-or-region "Some(" ")")
 )
