@@ -5,14 +5,6 @@
   "Turn on all Python customizations"
   (interactive)
 
-  ;; Forcing everyone to use Python3
-  (setq python-shell-interpreter "python3")
-  (setq py-python-command "/usr/bin/python3")
-  (setq jedi:environment-root "jedi")
-  (setq jedi:environment-virtualenv
-        (append python-environment-virtualenv
-                '("--python" "/usr/bin/python3")))
-
   (use-package elpy
     :ensure t
     :config
@@ -28,6 +20,14 @@
   (use-package py-autopep8
     :ensure t
   )
+
+  ;; Forcing everyone to use Python3
+  (setq python-shell-interpreter "python3")
+  (setq py-python-command "/usr/bin/python3")
+  (setq jedi:environment-root "jedi")
+  (setq jedi:environment-virtualenv
+        (append python-environment-virtualenv
+                '("--python" "/usr/bin/python3")))
 
   (elpy-enable)
 
