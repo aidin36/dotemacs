@@ -23,8 +23,8 @@
 (global-set-key (kbd "M-i") 'helm-imenu)
 
 ; Moving between buffers
-(global-set-key (kbd "C-;") 'previous-buffer)
-(global-set-key (kbd "C-'") 'next-buffer)
+(global-set-key (kbd "C-;") 'xah-previous-user-buffer)
+(global-set-key (kbd "C-'") 'xah-next-user-buffer)
 
 ; List kill ring
 (global-set-key (kbd "C-x C-y") 'helm-show-kill-ring)
