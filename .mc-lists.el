@@ -3,9 +3,11 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        backward-sentence
         c-electric-delete-forward
         c-electric-slash
         c-indent-line-or-region
+        coffee-dedent-line-backspace
         comment-line
         electric-newline-and-maybe-indent
         ensime-company-complete-or-indent
@@ -17,10 +19,15 @@
         org-kill-line
         org-self-insert-command
         org-todo
+        org-yank
+        typescript-insert-and-indent
+        wrap-in-some
+        sgml-slash
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        dap-tooltip-mouse-motion
         eval-print-last-sexp
         helm-mini
         help-for-help
