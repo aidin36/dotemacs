@@ -44,6 +44,12 @@
     :ensure t
   )
 
+  (use-package company
+    :ensure t
+    :hook (scala-mode . company-mode)
+    :config
+    (setq lsp-completion-provider :capf))
+
   ;; lsp-mode supports snippets, but in order for them to work you need to use yasnippet
   ;; If you don't want to use snippets set lsp-enable-snippet to nil in your lsp-mode settings
   ;;   to avoid odd behavior with snippets and indentation
@@ -51,10 +57,6 @@
   ;(use-package yasnippet
   ;  :ensure t
   ;)
-
-  (use-package company-lsp
-    :ensure t
-  )
 
   ;; It's not working for some reason
   ;(use-package lsp-treemacs
