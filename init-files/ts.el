@@ -21,6 +21,7 @@
     :ensure t)
   (global-prettier-mode)
 
+  (global-company-mode)
   ;; aligns annotation to the right hand side
   (setq company-tooltip-align-annotations t)
 
@@ -42,4 +43,8 @@
   (add-hook 'flycheck-mode-hook #'use-eslint-from-node-modules)
 
   (setq-default flycheck-disabled-checkers '(typescript-tide))
+
+  (setq tide-completion-enable-autoimport-suggestions nil)
+  (setq tide-native-json-parsing t)
+
 )
