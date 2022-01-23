@@ -21,8 +21,8 @@
 ;; buffer local variables
 (setq-default
  indent-tabs-mode nil
- tab-width 4
- c-basic-offset 4)
+ tab-width 2
+ c-basic-offset 2)
 
 ;; the package manager
 (require 'package)
