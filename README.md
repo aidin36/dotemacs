@@ -16,9 +16,6 @@ Requirements
 ------------
 The `init.el` file handles all Emacs package dependencies by itself. However, there are some external tools required for some functionality.
 
-Note: You might have to install 'use-package' manually using `package-list-packages`.
-I didn't try to figure out why sometimes Emacs doesn't install it upon evaluating my `init.el` file.
-
 General:
 * `xclip` for sharing Emacs' kill ring with OS clipboard.
 * `Adobe Source Code Pro` font.
@@ -44,13 +41,14 @@ Rust:
 * Rust source code (`rustup component add rust-src`) for code completion.
 * racer (`cargo install racer`) for autocompletion.
 
-Javascript:
-* langserver (`npm i -g javascript-typescript-langserver`)
-* ESLint. It needs to be installed globally (`npm install eslint --global`) but there should be a local config file.
+Javascript/Typescript:
+* langserver (`npm install -g typescript-language-server typescript`)
 * Prettier for formatting. It can be installed in the project's packages (`npm install prettier`)
 
 Other:
 * yamllint (`pip install yamllint`)
+* docker language server (`npm install -g dockerfile-language-server-nodejs`)
+* shellcheck (`sudo apt-get install shellcheck`)
 
 Copyright
 ---------
