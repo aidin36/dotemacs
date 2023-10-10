@@ -1,4 +1,4 @@
-;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
@@ -8,8 +8,8 @@
  (rear-context-string . "ing, String]) {\n")
  (position . 9398))
 ("org-refile-last-stored"
- (filename . "~/Documents/Tasks/backlog.org")
- (front-context-string . "** Potential mem")
- (rear-context-string . "vent_queue.php\n\n")
- (position . 1293))
+ (filename . "~/Documents/Tasks/someday.org")
+ (front-context-string . "** Running repor")
+ (rear-context-string . "Entity~ method.\n")
+ (position . 974))
 )

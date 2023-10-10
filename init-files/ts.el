@@ -47,4 +47,8 @@
   (setq tide-completion-enable-autoimport-suggestions nil)
   (setq tide-native-json-parsing t)
 
+  ;; It doesn't work well on JSON files. Disabling it.
+  (add-to-list 'auto-mode-alist '("\\.json\\'" . fundamental-mode))
+
+  (message "run M-x eglot")
 )

@@ -25,46 +25,20 @@
     :mode "\\.s\\(cala\\|bt\\)$"
   )
 
-  (use-package flycheck
-    :ensure t
-  )
-
-  (global-flycheck-mode)
-
-  (use-package lsp-mode
-    :ensure t
-    :hook  (scala-mode . lsp)
-    :config (setq lsp-prefer-flymake nil)
-            (setq lsp-enable-snippet nil)
-            (setq lsp-enable-file-watchers nil)
-            (setq lsp-lens-enable nil)
-  )
-
-  (use-package lsp-metals
-    :ensure t
-  )
-
-  (use-package company
-    :ensure t
-    :hook (scala-mode . company-mode)
-    :config
-    (setq lsp-completion-provider :capf))
-
-  ;; lsp-mode supports snippets, but in order for them to work you need to use yasnippet
-  ;; If you don't want to use snippets set lsp-enable-snippet to nil in your lsp-mode settings
-  ;;   to avoid odd behavior with snippets and indentation
-  ;; NOTE: It set to nil above
-  ;(use-package yasnippet
+  ;(use-package flycheck
   ;  :ensure t
   ;)
 
-  ;; It's not working for some reason
-  ;(use-package lsp-treemacs
+  ;(global-flycheck-mode)
+
+  ;; eglot is built in
+  ; (use-package eglot)
+
+  ;(use-package company
   ;  :ensure t
+  ;  :hook (scala-mode . company-mode)
   ;  :config
-  ;  (lsp-metals-treeview-enable t)
-  ;  (setq lsp-metals-treeview-show-when-views-received t)
-  ;)
+  ;  (setq lsp-completion-provider :capf))
 
   ;; Summary of current file (M-i)
   ;(use-package popup-imenu
@@ -81,5 +55,6 @@
 
   (global-set-key (kbd "M-/") 'lsp-find-references)
 
-  (message "Ready to Scala!")
+  ; (message "Ready to Scala!")
+  (message "Run: M-x eglot")
 )

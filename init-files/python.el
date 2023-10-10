@@ -48,7 +48,7 @@
   )
 
   ;; Setting python binary for flycheck.
-  (declare-function python-shell-calculate-exec-path "python3.8")
+  (declare-function python-shell-calculate-exec-path "python3")
 
   ;; Enabling fly-check which uses Pylint
   (global-flycheck-mode)

@@ -22,6 +22,9 @@
 ;; Helm imenu
 (global-set-key (kbd "M-i") 'helm-imenu)
 
+(global-set-key (kbd "M-;") 'find-file-in-project)
+(global-set-key (kbd "C-x M-l") 'find-file-in-project)
+
 ; Moving between buffers
 (global-set-key (kbd "C-;") 'xah-previous-user-buffer)
 (global-set-key (kbd "C-'") 'xah-next-user-buffer)

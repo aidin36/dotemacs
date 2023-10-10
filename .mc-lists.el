@@ -13,6 +13,7 @@
         ensime-company-complete-or-indent
         helm-M-x
         helm-show-kill-ring
+        ignore
         indent-for-tab-command
         org-delete-char
         org-end-of-line
@@ -20,17 +21,20 @@
         org-self-insert-command
         org-todo
         org-yank
+        sgml-slash
         typescript-insert-and-indent
         wrap-in-some
-        sgml-slash
         ))
 
 (setq mc/cmds-to-run-once
       '(
         dap-tooltip-mouse-motion
         eval-print-last-sexp
+        fill-paragraph
         helm-mini
         help-for-help
         jedi:goto-definition
+        lsp-signature-stop
         previous-buffer
+        puppet-interpolate
         ))

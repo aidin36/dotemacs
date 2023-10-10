@@ -35,10 +35,7 @@
 
 (package-initialize)
 (when (not package-archive-contents)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(require 'use-package)
-
+  (package-refresh-contents))
 
 ;;;
 ;;; Themes
@@ -51,7 +48,7 @@
  '(custom-safe-themes
    '("a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default))
  '(package-selected-packages
-   '(lsp-metals company-tabnine find-file-in-project coffee-mode tide company-flow scala-mode company-lsp company company-mode lsp-mode flycheck-flow flow-minor-mode prettier golint kubernetes fly-check helm-ag puppet-mode neotree all-the-icons terraform-mode flycheck-rust racer rust-mode auto-complete dockerfile-mode py-autopep8 jedi go-eldoc elpy exec-path-from-shell solarized-theme multiple-cursors xclip flycheck go-mode magit highlight-parentheses popup-imenu helm use-package)))
+   '(markdown-mode company-tabnine find-file-in-project coffee-mode tide company-flow scala-mode company company-mode flycheck-flow flow-minor-mode prettier golint kubernetes fly-check helm-ag puppet-mode neotree all-the-icons terraform-mode flycheck-rust racer rust-mode auto-complete dockerfile-mode py-autopep8 jedi go-eldoc elpy exec-path-from-shell solarized-theme multiple-cursors xclip flycheck go-mode magit highlight-parentheses popup-imenu helm use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -67,7 +64,7 @@
 ; Fonts
 (set-face-attribute 'default nil
                     :family "Source Code Variable"
-                    :height 80)
+                    :height 100)
 
 ;;
 ;; Editing
@@ -90,7 +87,7 @@
 ;; Internal mode of show pren.
 (show-paren-mode 1)
 ;; Line numbers
-(global-linum-mode t)
+(global-display-line-numbers-mode 1)
 
 ;; White space clean up before each save
 (add-hook 'before-save-hook #'whitespace-cleanup)
@@ -177,8 +174,6 @@
 (helm-mode 1)
 ; Use `fd' instead of `find'.
 (setq ffip-use-rust-fd t)
-
-(global-set-key (kbd "C-x M-l") 'find-file-in-project)
 
 ;;;
 ;;; ag (silver searcher) from project root.
