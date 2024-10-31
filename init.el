@@ -204,12 +204,12 @@
 (use-package puppet-mode
   :ensure t
 )
+(add-hook 'puppet-mode-hook 'highlight-indentation-current-column-mode)
 
 ;; Kubernetes
 (use-package kubernetes
   :ensure t
   :commands (kubernetes-overview))
-
 
 ;;
 ;; Disabled commands
