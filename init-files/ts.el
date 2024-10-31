@@ -5,7 +5,8 @@
   "Turn on all Typescript customizations"
   (interactive)
 
-  (global-flycheck-mode)
+  ;; eglot will handle error chekcing.
+  ;; (global-flycheck-mode)
 
   (use-package company
     :ensure t)
@@ -28,7 +29,9 @@
   ;; Note that it can also be configured per project via tsfmt.json file.
   (setq tide-format-options '(:placeOpenBraceOnNewLineForFunctions nil))
 
-  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+  ;; Use tree-sitter modes
+  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
+  (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
 
   ;; Copied from here: https://emacs.stackexchange.com/a/27609
   (defun use-eslint-from-node-modules ()

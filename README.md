@@ -18,14 +18,14 @@ The `init.el` file handles all Emacs package dependencies by itself. However, th
 
 General:
 * `xclip` for sharing Emacs' kill ring with OS clipboard.
-* `Adobe Source Code Pro` font.
+* `Adobe Source Code Pro` font (`Source Code Variable` family).
 * fd (https://github.com/sharkdp/fd)
 * silver searcher (ag) https://github.com/ggreer/the_silver_searcher
 * z (https://github.com/rupa/z/) for jumping to directories quickly.
 
 Scala:
 * `scalafmt` for formatting scala files.
-* Metals (https://scalameta.org/metals/)
+* Metals (https://scalameta.org/metals/) (the binary name should be `metals`).
 
 Go:
 * gofmt for formatting go files.
@@ -46,12 +46,12 @@ Javascript/Typescript:
 * Prettier for formatting. It can be installed in the project's packages (`npm install prettier`)
 
 Other:
-* yamllint (`pip install yamllint`)
+* yamllint (`pip install yamllint` or from your OS package manager.)
 * docker language server (`npm install -g dockerfile-language-server-nodejs`)
 * shellcheck (`sudo apt-get install shellcheck`)
 
 Copyright
 ---------
-Copyright 2018-2020 Aidin Gharibnavaz (https://aidinhut.com)
+Copyright 2018-2024 Aidin Gharibnavaz (https://aidinhut.com)
 All of these files are free software and published under the terms of GNU General Public License version 3 (or at your opinion, any later version).
 See [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) for more information.

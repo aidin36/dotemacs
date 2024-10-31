@@ -30,8 +30,7 @@
  package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                     ("org" . "https://orgmode.org/elpa/")
                     ("melpa" . "https://melpa.org/packages/")
-                    ("melpa-stable" . "https://stable.melpa.org/packages/"))
- package-archive-priorities '(("melpa-stable" . 1)))
+                    ("melpa-stable" . "https://stable.melpa.org/packages/")))
 
 (package-initialize)
 (when (not package-archive-contents)
@@ -40,22 +39,6 @@
 ;;;
 ;;; Themes
 ;;;
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default))
- '(package-selected-packages
-   '(markdown-mode company-tabnine find-file-in-project coffee-mode tide company-flow scala-mode company company-mode flycheck-flow flow-minor-mode prettier golint kubernetes fly-check helm-ag puppet-mode neotree all-the-icons terraform-mode flycheck-rust racer rust-mode auto-complete dockerfile-mode py-autopep8 jedi go-eldoc elpy exec-path-from-shell solarized-theme multiple-cursors xclip flycheck go-mode magit highlight-parentheses popup-imenu helm use-package)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
 (use-package solarized-theme
   :ensure t
 )
@@ -86,18 +69,40 @@
 ;						(hl-paren-color-update)))))))
 ;; Internal mode of show pren.
 (show-paren-mode 1)
-;; Line numbers
-(global-display-line-numbers-mode 1)
+
+;; Global line numbers mode
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'text-mode-hook 'display-line-numbers-mode)
 
 ;; White space clean up before each save
 (add-hook 'before-save-hook #'whitespace-cleanup)
 
-;; Autocompletion
-(use-package auto-complete
+;; tree-sitter (syntax highlights).
+;; See ~/.emacs.d/tree-sitter-grammars/README.md too
+(require 'treesit)
+
+;; Use tree-sitter mode for these languages.
+;; Found it in this guide: https://www.masteringemacs.org/article/how-to-get-started-tree-sitter
+;(setq major-mode-remap-alist
+; '((yaml-mode . yaml-ts-mode)
+;   (bash-mode . bash-ts-mode)
+;   (js2-mode . js-ts-mode)
+;   (typescript-mode . typescript-ts-mode)
+;   (json-mode . json-ts-mode)
+;   (css-mode . css-ts-mode)
+;   (go-mode . go-ts-mode)
+;   (dockerfile-mode . dockerfile-ts-mode)
+;   (python-mode . python-ts-mode)))
+
+;; Automate the tree-sitter installation and activation.
+;; See: https://robbmann.io/posts/emacs-treesit-auto/
+(use-package treesit-auto
   :ensure t
-)
-; Turning it on at all times.
-;(global-auto-complete-mode)
+  :custom
+  (treesit-auto-install 'prompt)
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))
 
 ;;
 ;; Appearance
@@ -126,12 +131,6 @@
 
 (global-set-key (kbd "C-c M-r") 'helm-resume)
 (global-set-key (kbd "C-c n") 'helm-resume)
-
-;; Copy to system clipboard
-(use-package xclip
-  :ensure t
-)
-(xclip-mode 1)
 
 ;;;
 ;;; Multi cursor
@@ -185,6 +184,7 @@
 (global-set-key (kbd "M-r") 'helm-do-ag-project-root)
 
 ;;; Magit
+(load "~/.emacs.d/init-files/git.el")
 ; Use full buffer instead of half-windowed buffer.
 (setq magit-status-buffer-switch-function 'switch-to-buffer)
 
@@ -223,7 +223,6 @@
 (load "~/.emacs.d/init-files/keybindings.el")
 (load "~/.emacs.d/init-files/funcs.el")
 (load "~/.emacs.d/init-files/scala.el")
-(load "~/.emacs.d/init-files/git.el")
 (load "~/.emacs.d/init-files/go.el")
 (load "~/.emacs.d/init-files/yaml.el")
 (load "~/.emacs.d/init-files/python.el")
@@ -235,4 +234,18 @@
 (load "~/.emacs.d/init-files/js.el")
 (load "~/.emacs.d/init-files/ts.el")
 (load "~/.emacs.d/init-files/coffee.el")
-(load "~/.emacs.d/init-files/tabnine.el")
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(helm-M-x-always-save-history t)
+ '(package-selected-packages
+   '(eglot prettier tide go-mode company scala-mode terraform-mode dockerfile-mode kubernetes puppet-mode neotree all-the-icons magit helm-ag find-file-in-project exec-path-from-shell multiple-cursors helm flycheck treesit-auto solarized-theme)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

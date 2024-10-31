@@ -5,11 +5,12 @@
   "Turn on all Python customizations"
   (interactive)
 
-  (use-package elpy
-    :ensure t
-    :config
-      (remove-hook 'elpy-modules 'elpy-module-flymake)
-  )
+  ;; TODO: elpy is not working. Find alternatives.
+  ;; (use-package elpy
+  ;;   :ensure t
+  ;;   :config
+  ;;     (remove-hook 'elpy-modules 'elpy-module-flymake)
+  ;; )
 
   ;; Auto-completion.
   (use-package jedi
@@ -28,8 +29,6 @@
   (setq jedi:environment-virtualenv
         (append python-environment-virtualenv
                 '("--python" "/usr/bin/python3")))
-
-  (elpy-enable)
 
   ;; Enabling Jedi.
   (add-hook 'python-mode-hook 'jedi:setup)
@@ -52,11 +51,4 @@
 
   ;; Enabling fly-check which uses Pylint
   (global-flycheck-mode)
-
-  ;; I sometimes hit it accidentally.
-  (defun my-elpy-mode-hook-fun ()
-    (local-unset-key (kbd "C-<RET>")))
-
-  (add-hook 'elpy-mode-hook #'my-elpy-mode-hook-fun)
-
 )

@@ -2,42 +2,24 @@
   "Turn on all Go customizations"
   (interactive)
 
-  ;; Turning on Go Modules all the time
-  (setenv "GO111MODULE" "on")
-
   ;; Required packages
   (use-package go-mode
     :ensure t
   )
 
-  (use-package flycheck
-    :ensure t
-  )
-
-  (use-package go-eldoc
-    :ensure t
-  )
-
-  (use-package golint
-    :ensure t
-  )
+  ;; TODO: Eldoc doesn't work. Look into alternatives.
+  ;;(use-package go-eldoc
+  ;;  :ensure t
+  ;;)
 
   ;; Enabling eldoc (showing signatures on mini-buffer)
-  (add-hook 'go-mode-hook 'go-eldoc-setup)
-
-  ;; Flycheck for checkings at run-time
-  (global-flycheck-mode)
+  ; (add-hook 'go-mode-hook 'go-eldoc-setup)
 
   ;; Formatting file before save.
-  (add-hook 'before-save-hook 'gofmt-before-save)
+  (add-hook 'before-save-hook #'gofmt-before-save)
 
   ;; Setting jump-to-definition shortkey
-  (global-set-key (kbd "M-.") 'godef-jump)
+  ;; (global-set-key (kbd "M-.") 'godef-jump)
 
-  ;; Autocomplete. I use `gocode'.
-  (require 'go-autocomplete)
-  (require 'auto-complete-config)
-  (ac-config-default)
-
-  (message "Ready to Go!")
+  (message "Ready to Go! Don't forget to run Eglot!")
 )
